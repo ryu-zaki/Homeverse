@@ -123,7 +123,7 @@ export default function Properties() {
          clickable: true,
        }}
        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-       className="swiper_container relative mt-10"
+       className="swiper_container relative mt-20"
        > 
        
        {properties}

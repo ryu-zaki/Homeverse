@@ -1,6 +1,7 @@
 
 import './App.css';
 import AboutSection from './components/about/AboutSection';
+import Aminities from './components/aminities/Aminities';
 import HeroSection from './components/hero/HeroSection';
 import NavBar from './components/navigations/NavBar';
 import Properties from './components/properties/Properties';
@@ -16,6 +17,7 @@ function App() {
        <AboutSection />
        <Services />
        <Properties />
+       <Aminities />
       </main>
       
     </div>

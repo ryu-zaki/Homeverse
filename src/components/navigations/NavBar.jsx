@@ -25,8 +25,13 @@ export default function NavBar() {
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) setNavFixed(true);
+        if (!entry.isIntersecting) {
+          setNavFixed(true);
+          //console.log("not-visible")
+          return;
+        }
 
+      //  console.log("visible")
         setNavFixed(false)
       })
     })
@@ -82,7 +87,7 @@ export default function NavBar() {
 
     {/* Second layer */}
     <div ref={navRef} className='h-24'> 
-    <div className={`${navFixed && "nav-fixed"} flex bg-white h-24 sm:py-10 items-center w-full lg:justify-between lg:items-center lg:px-8 xl:px-16`}>
+    <div className={`${navFixed && "nav-fixed"} opacity-0 flex bg-white h-24 sm:py-10 items-center w-full lg:justify-between lg:items-center lg:px-8 xl:px-16`}>
         <img className='mx-auto lg:mx-0' src={logo} alt='' />
 
         {navVisible && <div onClick={() => setNavVisible(false)}  className='bg-overlay z-10 fixed inset-0 lg:hidden'></div>}
@@ -98,7 +103,7 @@ export default function NavBar() {
         </nav>
 
 
-        <div className={`${navVisible && "translate-y-full"} opacity-0 nav-buttons flex justify-between p-5 transition-transform z-20 duration-500 px-8 fixed bottom-0 w-full left-0 right-0 items-center gap-2 text-dark bg-white text-sm sm:text-base md:px-16 lg:static lg:px-0 lg:p-0 lg:justify-start lg:w-auto lg:gap-5`}>
+        <div className={`${navVisible && "translate-y-full"} nav-buttons flex justify-between p-5 transition-transform z-20 duration-500 px-8 fixed bottom-0 w-full left-0 right-0 items-center gap-2 text-dark bg-white text-sm sm:text-base md:px-16 lg:static lg:px-0 lg:p-0 lg:justify-start lg:w-auto lg:gap-5`}>
           <button className='flex gap-1 flex-col items-center shadow-box lg:p-3 lg:rounded-md'>
             <img className='w-5 sm:w-7 md:w-5' src={SearchIcon} alt='' />
             <p className='lg:hidden'>Search</p>

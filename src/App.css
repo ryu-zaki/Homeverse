@@ -187,9 +187,10 @@ section.shadow-box {
   .nav-fixed {
     position: fixed;
     top: 0;
-
+    height: 5em;
     translate: 0 -100%;
     animation: navVisible .4s forwards;
+    z-index: 99;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
 
   }
