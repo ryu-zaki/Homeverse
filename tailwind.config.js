@@ -24,10 +24,11 @@ module.exports = {
 
     colors: {
       "lightOrange": "rgba(255,90,61, 0.3)",
+      "lightBlue": "#282B39",
       "orange": "#FF5A3D",
       "white": "#fff",
       "dark": "#222",
-      "darkBlue": "#0A2C3D",
+      "darkBlue": "#181C2B",
       "subText": "#555",
       "dark": "#071A1D",
       "overlay": "rgba(0,0,0,0.5)",

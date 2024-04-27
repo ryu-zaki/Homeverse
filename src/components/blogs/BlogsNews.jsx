@@ -66,8 +66,6 @@ const BlogsNews = () => {
                 modules={[Scrollbar]}
                 breakpoints={breakpoints}
                 scrollbar={{ draggable: true, dragSize: 70 }}
-                loop={true}
-                centeredSlides={true}
                 spaceBetween={10}
                 className='mt-10 mb-20 md:mt-14'
               >
