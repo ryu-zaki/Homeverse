@@ -19,17 +19,7 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 export default function Properties() {
-
-  const [slides, setSlides] = React.useState(1);
-  const [screenWidth] = React.useState(window.screen.width);
-
-  React.useEffect(() => {
-    if (screenWidth >= 700) setSlides(2);
-
-    setSlides(1)
-  }, [screenWidth])
   
-
   const properties = [
     { 
       price: 40000,
@@ -189,22 +179,29 @@ const PropertyCatalog = ({data}) => {
 
         <div className='flex justify-between w-full mt-5 gap-4'>
           <div className="grow border-r border-r-dark">
+            <div className='flex items-center gap-1'>
             <span>{bedrooms}</span> 
             <ion-icon name="bed-outline"></ion-icon>
+            </div>
+            
 
             <p>Bedrooms</p>
           </div>
 
           <div className="grow border-r border-r-dark">
-            <span>{bathrooms}</span>
+           <div className='flex items-center gap-1'>
+           <span>{bathrooms}</span>
             <ion-icon name="person-circle-outline"></ion-icon>
+           </div>
 
             <p>Bathrooms</p>
           </div>
 
           <div className="grow">
+            <div className='flex items-center gap-1'>
             <span>{square}</span>
             <ion-icon name="person-circle-outline"></ion-icon>
+            </div>
 
             <p>Square Ft</p>
           </div>

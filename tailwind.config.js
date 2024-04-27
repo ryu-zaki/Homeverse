@@ -26,6 +26,7 @@ module.exports = {
       "lightOrange": "rgba(255,90,61, 0.3)",
       "orange": "#FF5A3D",
       "white": "#fff",
+      "dark": "#222",
       "darkBlue": "#0A2C3D",
       "subText": "#555",
       "dark": "#071A1D",

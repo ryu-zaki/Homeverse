@@ -79,6 +79,47 @@ section.shadow-box {
   z-index: -1;
 }
 
+.grid-container-aminities {
+  max-width: 66em;
+  margin-inline: auto;
+}
+
+.grid-container-aminities > * {
+  position: relative;
+  
+  z-index: 1;
+ 
+}
+
+.grid-container-aminities > * > section {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-container-aminities > * > section::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 3em;
+  scale: 0;
+  height: 3em;
+  translate: -50% -50%;
+  border-radius: .5em;
+  background-color: var(--orange);
+  top: 50%;
+  left: 50%;
+
+  transition: all .8s;
+
+}
+
+.blog-con-img:hover > img {
+
+  scale: 1.12;
+
+}
+
+
 @media (min-width: 1024px) {
 
   :root {
@@ -199,6 +240,16 @@ section.shadow-box {
     to {
       translate: 0 0;
     }
+  }
+
+  .grid-container-aminities > *.active > section::before {
+    scale: 7;
+  }
+
+  .grid-container-aminities > *.active > section :is(h3, div) {
+
+    color:var(--white) ;
+
   }
 
 }

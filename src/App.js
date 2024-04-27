@@ -2,6 +2,7 @@
 import './App.css';
 import AboutSection from './components/about/AboutSection';
 import Aminities from './components/aminities/Aminities';
+import BlogsNews from './components/blogs/BlogsNews';
 import HeroSection from './components/hero/HeroSection';
 import NavBar from './components/navigations/NavBar';
 import Properties from './components/properties/Properties';
@@ -18,6 +19,7 @@ function App() {
        <Services />
        <Properties />
        <Aminities />
+       <BlogsNews />
       </main>
       
     </div>

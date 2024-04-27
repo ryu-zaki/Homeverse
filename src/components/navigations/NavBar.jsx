@@ -87,7 +87,7 @@ export default function NavBar() {
 
     {/* Second layer */}
     <div ref={navRef} className='h-24'> 
-    <div className={`${navFixed && "nav-fixed"} opacity-0 flex bg-white h-24 sm:py-10 items-center w-full lg:justify-between lg:items-center lg:px-8 xl:px-16`}>
+    <div className={`${navFixed && "nav-fixed"} flex bg-white h-24 sm:py-10 items-center w-full lg:justify-between lg:items-center lg:px-8 xl:px-16`}>
         <img className='mx-auto lg:mx-0' src={logo} alt='' />
 
         {navVisible && <div onClick={() => setNavVisible(false)}  className='bg-overlay z-10 fixed inset-0 lg:hidden'></div>}
