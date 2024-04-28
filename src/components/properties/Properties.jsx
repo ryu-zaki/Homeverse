@@ -15,6 +15,9 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+/* Scroll Functionality */
+import { Element } from 'react-scroll';
+
 //import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
@@ -136,7 +139,8 @@ const PropertyCatalog = ({data}) => {
   const isForRent = status === "FOR RENT" ? "bg-green" : "bg-orange";
 
   return (
-    <section className=' bg-white flex flex-col gap-8'>
+    <section >
+      <Element className='bg-white flex flex-col gap-8' name='Property'>
       <div className='relative h-64 sm:h-80'>
         <img className='object-cover h-full w-full inset-0 absolute' src={imgSrc} alt='' />
 
@@ -235,6 +239,7 @@ const PropertyCatalog = ({data}) => {
           </div>
         </div>
       </div>
+      </Element>
     </section>
   )
 

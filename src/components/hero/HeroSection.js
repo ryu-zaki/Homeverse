@@ -1,10 +1,12 @@
 import React from 'react'
 import houseIcon from './imgs/house-icon.png';
 import HeroBanner from './imgs/hero-banner.png';
+import { Element } from 'react-scroll';
 
 export default function HeroSection() {
   return (
-    <article className='py-14 flex hero-section flex-col gap-10 items-center lg:flex-row lg:justify-center lg:py-28'>
+    <article>
+        <Element name="Home" className='py-14 flex hero-section flex-col gap-10 items-center lg:flex-row lg:justify-center lg:py-28'>
         <section>
           <header className='flex flex-col gap-5 sm:gap-10 sm:items-center sm:text-center lg:text-left lg:items-start'>
             <div className='flex gap-1 items-center font-semibold text-sm sm:text-base'>
@@ -21,6 +23,7 @@ export default function HeroSection() {
         <section> 
           <img draggable={false} src={HeroBanner} alt=''/>
         </section>
+        </Element>
     </article>
   )
 }

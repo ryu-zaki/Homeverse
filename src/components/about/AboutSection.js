@@ -2,9 +2,12 @@ import React from 'react'
 import AboutImg from './imgs/about-banner-1.png'
 import HouseImg from '../hero/imgs/house-icon.png'
 
+import { Element } from 'react-scroll'
+
 export default function AboutSection() {
   return (
-    <article className='my-10 flex bg-white about-section mx-auto md:gap-10 lg:mx-0 lg:justify-center'>
+    <article>
+      <Element name='About' className='my-10 flex bg-white about-section mx-auto md:gap-10 lg:mx-0 lg:justify-center'>
         <section className='hidden w-1/2 lg:block'>
             <img className='min-w-full' src={AboutImg} alt=''/>
         </section>
@@ -42,6 +45,7 @@ export default function AboutSection() {
 
             <button className='text-sm bg-orange p-3 px-6 text-white rounded-md sm:text-base'>OUR SERVICES</button>
         </section>
+        </Element>
     </article>
   )
 }

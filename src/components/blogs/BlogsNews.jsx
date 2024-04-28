@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
+import { Element } from 'react-scroll';
 
 /* Blog Images */
 import Blog1 from './imgs/blog-1.png'
@@ -57,6 +58,7 @@ const BlogsNews = () => {
 
     return (
         <article>
+          <Element name='Blog'>
             <div className="flex flex-col items-center">
               <p className='bg-lightOrange text-orange rounded-full w-fit p-2 px-6'>News and Blogs</p>
               <h2 className='text-3xl mt-5 font-bold sm:text-center md:text-4xl lg:text-left xl:text-5xl'>Lastest news Feeds</h2>
@@ -71,6 +73,7 @@ const BlogsNews = () => {
               >
                 {blogsSections}
               </Swiper>
+          </Element>
         </article>
     )
 
@@ -79,10 +82,9 @@ const BlogsNews = () => {
 
 const BlogCard = ({title, category, imgSrc}) => {
 
-    const [isScale, setIsScale] = React.useState(false);
-
     return (
         <section className='flex flex-col gap-5 mb-10'>
+          
           <div className='blog-con-img h-56 overflow-hidden relative sm:h-72'>
             <img className={`transition-all duration-500 absolute object-cover inset-0 h-full w-full`} src={imgSrc} alt='' />  
           </div>       

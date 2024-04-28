@@ -1,5 +1,6 @@
 import React from 'react';
 import logoLight from './imgs/logo-light.png'
+import { Element } from 'react-scroll';
 
 
 const Footer = () => {
@@ -34,7 +35,7 @@ const Footer = () => {
                 </button>
             </div>
 
-           <div className='flex flex-col gap-10 items-center px-5 md:w-full md:px-16 md:pb-10 md:gap-16 lg:flex-row lg:justify-center xl:px-24 xl:pb-20'>
+           <Element name='Contact' className='flex flex-col gap-10 items-center px-5 md:w-full md:px-16 md:pb-10 md:gap-16 lg:flex-row lg:justify-center xl:px-24 xl:pb-20'>
             <div className='flex flex-col gap-4 w-full lg:max-w-80 xl:max-w-full'>
                 <div className='flex flex-col items-center text-center md:items-start md:text-left'>
                     <img className='mb-5' src={logoLight} alt='' />
@@ -70,7 +71,7 @@ const Footer = () => {
                 {footerDetails}
             </article>
 
-        </div>
+        </Element>
 
 
             <div className='bg-lightBlue w-full p-4 text-center'>

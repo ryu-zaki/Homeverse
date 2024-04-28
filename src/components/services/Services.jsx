@@ -3,6 +3,7 @@ import Service1 from './imgs/service-1.png'
 import Service2 from './imgs/service-2.png'
 import Service3 from './imgs/service-3.png'
 import '../../App.css'
+import { Element } from 'react-scroll'
 
 
 export default function Services() {
@@ -41,7 +42,8 @@ export default function Services() {
 />)
 
   return (
-    <article className='flex flex-col gap-3 items-center py-20'>
+    <article>
+      <Element name='Service' className='flex flex-col gap-3 items-center py-20'>
       <p className='bg-lightOrange rounded-full text-orange p-2 px-6'>Our Services</p>  
       <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl xl:mt-6'>Our Services</h2>
     
@@ -49,7 +51,7 @@ export default function Services() {
        {services}
       </div>
 
-
+      </Element>
     </article>
   )
 }

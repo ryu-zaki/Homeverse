@@ -119,6 +119,31 @@ section.shadow-box {
 
 }
 
+nav .nav-links > *:hover {
+  color: var(--orange);
+}
+
+nav .nav-links > * {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+nav .nav-links > *::before {
+  content: '';
+  position: absolute;
+  background-color: var(--orange);
+  width: 120%;
+  height: .1em;
+  scale: 0 1;
+  transform-origin: left;
+  bottom: -.3em;
+}
+
+nav .nav-links > *:has(a.active)::before {
+  scale: 1 1;
+}
+
 
 @media (min-width: 1024px) {
 
@@ -228,7 +253,7 @@ section.shadow-box {
   .nav-fixed {
     position: fixed;
     top: 0;
-    height: 5em;
+    max-height: 3em;
     translate: 0 -100%;
     animation: navVisible .4s forwards;
     z-index: 99;

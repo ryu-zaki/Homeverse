@@ -15,6 +15,9 @@ import facebookIcon from './imgs/facebook.png';
 import instagramIcon from './imgs/instagram.png';
 import twitterIcon from './imgs/twitter.png';
 
+/* Scroll Fuctionality */
+import {scroll, Link } from 'react-scroll'
+
 export default function NavBar() {
 
   const [navVisible, setNavVisible] = React.useState(false);
@@ -40,6 +43,53 @@ export default function NavBar() {
 
 
   }, []);
+
+  const getOffset = (nav) => {
+    let offset;
+    switch(nav) {
+
+      case "About":
+       offset = -120;
+      break
+
+      case "Service":
+       offset = -50;
+      break
+
+      case "Property":
+       offset = -340;
+      break
+
+      case "Blog":
+       offset = -120;
+      break
+
+      case "Contact":
+       offset = 0;
+      break
+
+      default: 
+        offset = -300;
+
+    }
+
+    return offset;
+
+  }
+
+  const sectionnNavs = ["Home", "About", "Service", "Property", "Blog", "Contact"] 
+    .map((nav, index) => {
+      const elementOffset = getOffset(nav);
+      return <li className='cursor-pointer'><Link 
+        smooth={true}
+        duration={800} 
+        onSetActive={() => console.log(nav)}
+        activeClass='active'
+        offset={elementOffset}
+        to={nav}
+        key={index}
+        >{nav}</Link></li>
+    })
 
 
   return (
@@ -92,13 +142,8 @@ export default function NavBar() {
 
         {navVisible && <div onClick={() => setNavVisible(false)}  className='bg-overlay z-10 fixed inset-0 lg:hidden'></div>}
         <nav className={`side-nav ${!navVisible && "-translate-x-full deac lg:translate-x-0"} transition-all duration-500 z-10 fixed left-0 bottom-0 bg-white p-8 sm:text-lg sm:p-12 lg:static lg:p-0 lg:text-base`}>
-            <ul className='flex flex-col gap-8 lg:flex-row lg:gap-5 lg:justify-center xl:gap-8'>
-                <li><a href='/'>Home</a></li>
-                <li><a href='/'>About</a></li>
-                <li><a href='/'>Service</a></li>
-                <li><a href='/'>Property</a></li>
-                <li><a href='/'>Blog</a></li>
-                <li><a href='/'>Contact</a></li>
+            <ul className='flex nav-links flex-col gap-8 lg:flex-row lg:gap-5 lg:justify-center xl:gap-8'>
+                {sectionnNavs}
             </ul>
         </nav>
 
