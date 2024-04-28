@@ -138,6 +138,8 @@ nav .nav-links > *::before {
   scale: 0 1;
   transform-origin: left;
   bottom: -.3em;
+
+  transition: all .4s;
 }
 
 nav .nav-links > *:has(a.active)::before {

@@ -57,7 +57,7 @@ export default function NavBar() {
       break
 
       case "Property":
-       offset = -340;
+       offset = -300;
       break
 
       case "Blog":
@@ -80,14 +80,15 @@ export default function NavBar() {
   const sectionnNavs = ["Home", "About", "Service", "Property", "Blog", "Contact"] 
     .map((nav, index) => {
       const elementOffset = getOffset(nav);
-      return <li className='cursor-pointer'><Link 
+      return <li  key={index} className='cursor-pointer'><Link 
         smooth={true}
         duration={800} 
+        spy={true}
         onSetActive={() => console.log(nav)}
         activeClass='active'
         offset={elementOffset}
         to={nav}
-        key={index}
+       
         >{nav}</Link></li>
     })
 
